@@ -1,0 +1,70 @@
+body {
+	font-family: Arial;
+}
+
+h2 {
+	border-bottom: solid;
+}
+
+.person {
+	text-align:center;
+	font-size: 5em;
+	font-weight: bold;
+	border-bottom: thick double;
+}
+
+.job-date {
+	display: block;
+	float: right;
+	margin-right: 10px;
+}
+
+.reference {
+	text-align: center;
+}
+
+@media print {
+	body {
+		color: 000000
+	}
+}
+
+#contact-container {
+	width: 100%;
+}
+
+#contact-container div {
+	float: left;
+	width: 33%;
+}
+
+#street-address {
+	text-align: left
+}
+
+#phone-number {
+	text-align: center
+}
+
+#email {
+	text-align: right
+}
+
+.school-icon {
+	float: right;
+	height: 72px;
+	width: 112px;
+	clear: right;
+	margin-top: -15px;
+	margin-right: 19px;
+}
+
+#education-list li{
+	height: 65px;
+	padding-top: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+
+}
+

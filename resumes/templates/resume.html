@@ -1,0 +1,69 @@
+{% load static %}
+{% get_static_prefix as STATIC_URL %}
+
+<html>
+	<head>
+		<title>{{ resume.person.full_name }}'s Resume</title>
+		<meta name="resume developer">
+		<meta name="Taylor Rahm" content="Resume">
+		{% block page_css %}
+			<link rel="stylesheet" href="{{ STATIC_URL }}/css/resumes.css" type="text/css" />
+		{% endblock %}
+	</head>
+	<body>
+			<div id="contact-container">
+				<div id="street-address">
+					{{ resume.address.street }},{{ resume.address.city }}, {{ resume.address.state }}
+					{{ resume.address.zip_code }}
+				</div>
+				<div id="phone-number">
+					{{ resume.person.phone_number }}
+				</div>
+				<div id="email">
+					{{ resume.person.email }}
+				</div>
+			</div>
+		<p class="person">{{ resume.person.full_name }}</p>
+		<h2> About Me </h2>
+			{{ resume.person.bio }}
+		<h2> Education </h2>
+		<ul id="education-list">
+		{% for school in resume.schools.all %}
+		<li id="education-item">
+			<img class="school-icon" src="/media/{{ school.icon }}"></img>
+			{{ school.institute }}, {{ school.major }}, {{ school.classification}}<br/>
+			Graduation Date: {{ school.grad_date }}, GPA: {{ school.gpa }}
+		</li>
+		{% endfor %}
+		</ul>
+		<h2> Experience </h2>
+		{% for experience in resume.experiences.all %}
+			<h4><span>{{ experience.title }}, {{ experience.company }}</span>
+				<span>{{ experience.city }}, {{ experience.state }}</span>
+				<span class="job-date">{{ experience.start_date }}-{{ experience.end_date }}</span></h4>
+			<ul>
+			{% for description in experience.descriptions.all %}
+				<li>{{ description.responsibilities }}</li>
+			{% endfor %}
+			</ul>
+		{% endfor %}
+		<h2> Extracurriculars </h2>
+		{% for extracurricular in resume.extracurriculars.all %}
+		<li>{{ extracurricular.award_activity }}</li>
+		{% endfor %}
+		<h2> Skills </h2>
+		{% for skill in resume.skills.all %}
+			<li>{{ skill.comp_skill }}</li>
+		{% endfor %}
+		</ul>
+		<h2> References </h2>
+		<ul>
+		{% for reference in resume.references.all %}
+		<li>{{ reference.name }}<br/>
+			{{ reference.email }}<br/>
+			{{ reference.job_position }}, {{ reference.company }}</li>
+		{% endfor %}
+		</ul>
+		<p class="reference">**More References Available at Request**</p>
+	</body>
+</html>
