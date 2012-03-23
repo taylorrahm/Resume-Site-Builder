@@ -1,6 +1,6 @@
 import os
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 DJANGO_ROOT = os.path.dirname(os.path.abspath(__file__))
