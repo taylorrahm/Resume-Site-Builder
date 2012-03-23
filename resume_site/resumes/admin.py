@@ -8,12 +8,12 @@ class HiddenModelAdmin (admin.ModelAdmin):
 		perms['list_hide'] = True
 		return perms
 
-admin.site.register(Person, HiddenModelAdmin)
+admin.site.register(Person)
 admin.site.register(Resume)
-admin.site.register(Address, HiddenModelAdmin)
-admin.site.register(School, HiddenModelAdmin)
-admin.site.register(Experience, HiddenModelAdmin)
-admin.site.register(Extracurricular, HiddenModelAdmin)
-admin.site.register(Description, HiddenModelAdmin)
-admin.site.register(Skill, HiddenModelAdmin)
-admin.site.register(Reference, HiddenModelAdmin)
+admin.site.register(Address)
+admin.site.register(School)
+admin.site.register(Experience)
+admin.site.register(Extracurricular)
+admin.site.register(Description)
+admin.site.register(Skill)
+admin.site.register(Reference)

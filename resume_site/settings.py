@@ -1,5 +1,10 @@
+import os
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+DJANGO_ROOT = os.path.dirname(os.path.abspath(__file__))
+WEBSITE_ROOT = os.path.dirname(DJANGO_ROOT)
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -28,11 +33,11 @@ USE_I18N = True
 
 USE_L10N = True
 
-MEDIA_ROOT = '/Users/taylorrahm/development/personal/resume_site/resumes/media/'
+MEDIA_ROOT = os.path.join(WEBSITE_ROOT, 'media')
 
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = '/Users/taylorrahm/development/personal/resume_site/staticfiles'
+STATIC_ROOT = os.path.join(WEBSITE_ROOT, 'staticfiles')
 
 STATIC_URL = '/static/'
 
