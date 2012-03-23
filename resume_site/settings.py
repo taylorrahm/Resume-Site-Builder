@@ -1,6 +1,7 @@
 import os
 
-DEBUG = False
+DEBUG = True
+
 TEMPLATE_DEBUG = DEBUG
 
 DJANGO_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -15,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'resumes.db',                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(DJANGO_ROOT,'resumes.db'),                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
